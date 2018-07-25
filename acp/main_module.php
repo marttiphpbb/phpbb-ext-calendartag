@@ -1,13 +1,13 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmono
+* phpBB Extension - marttiphpbb calendartag
 * @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmono\acp;
+namespace marttiphpbb\calendartag\acp;
 
-use marttiphpbb\calendarmono\util\cnst;
+use marttiphpbb\calendartag\util\cnst;
 
 class main_module
 {
@@ -26,7 +26,7 @@ class main_module
 		$language->add_lang('acp', cnst::FOLDER);
 		add_form_key(cnst::FOLDER);
 
-//		$settings = $phpbb_container->get('marttiphpbb.calendarmono.repository.settings');
+//		$settings = $phpbb_container->get('marttiphpbb.calendartag.repository.settings');
 
 		switch($mode)
 		{

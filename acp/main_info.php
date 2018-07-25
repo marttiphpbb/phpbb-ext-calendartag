@@ -1,25 +1,25 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmono
+* phpBB Extension - marttiphpbb calendartag
 * @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmono\acp;
+namespace marttiphpbb\calendartag\acp;
 
-use marttiphpbb\calendarmono\util\cnst;
+use marttiphpbb\calendartag\util\cnst;
 
 class main_info
 {
 	function module()
 	{
 		return [
-			'filename'	=> '\marttiphpbb\calendarmono\acp\main_module',
+			'filename'	=> '\marttiphpbb\calendartag\acp\main_module',
 			'title'		=> cnst::L_ACP ,
 			'modes'		=> [
 				'tag_rendering'	=> [
 					'title'	=> cnst::L_ACP . '_TAG_RENDERING',
-					'auth'	=> 'ext_marttiphpbb/calendarmono && acl_a_board',
+					'auth'	=> 'ext_marttiphpbb/calendartag && acl_a_board',
 					'cat'	=> [cnst::L_ACP],
 				],
 			],

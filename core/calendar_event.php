@@ -1,15 +1,15 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb calendarmono
+* phpBB Extension - marttiphpbb calendartag
 * @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\calendarmono\core;
+namespace marttiphpbb\calendartag\core;
 
-use marttiphpbb\calendarmono\core\timespan;
+use marttiphpbb\calendartag\core\timespan;
 
-class calendarmono_event
+class calendartag_event
 {
 	protected $id;
 	protected $timespan;

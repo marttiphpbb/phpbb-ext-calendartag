@@ -1,7 +1,7 @@
 <?php
 
 /**
-* phpBB Extension - marttiphpbb calendarmono
+* phpBB Extension - marttiphpbb calendartag
 * @copyright (c) 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
@@ -18,6 +18,6 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 
-	'ACP_MARTTIPHPBB_CALENDARMONO'					=> 'Calendar Mono',
-	'ACP_MARTTIPHPBB_CALENDARMONO_TAG_RENDERING'	=> 'Tag rendering',
+	'ACP_MARTTIPHPBB_CALENDARTAG'					=> 'Calendar Tag',
+	'ACP_MARTTIPHPBB_CALENDARTAG_TAG_RENDERING'	=> 'Tag rendering',
 ]);
