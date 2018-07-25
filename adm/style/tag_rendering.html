@@ -1,0 +1,17 @@
+{%- include 'overall_header.html' -%}
+
+<h1>
+	{{- lang('ACP_MARTTIPHPBB_CALENDARMONO_TAG_RENDERING') -}}
+</h1>
+
+<form id="acp_board" method="post" action="{{- U_ACTION -}}">
+	<fieldset>
+		{%- set TAG_IS_PREFIX_EXPLAIN = lang('ACP_MARTTIPHPBB_CALENDARMONO_TAG_IS_PREFIX_EXPLAIN', '<a href="https://github.com/marttiphpbb/phpbb-ext-topicprefixtags">', '</a>', '<a href="https://github.com/marttiphpbb/phpbb-ext-topicsuffixtags">') -%}
+		{%- include '@marttiphpbb_calendarmono/include/yes_no_radio.html' with {'label': 'ACP_MARTTIPHPBB_CALENDARMONO_TAG_IS_PREFIX', 'explain': TAG_IS_PREFIX_EXPLAIN, 'name': 'tag_is_prefix', 'checked': TAG_IS_PREFIX} only -%}
+	</fieldset>
+
+	{%- include '@marttiphpbb_calendarmono/include/submit_buttons.html' -%}
+	{{- S_FORM_TOKEN -}}
+</form>
+
+{%- include 'overall_footer.html' -%}

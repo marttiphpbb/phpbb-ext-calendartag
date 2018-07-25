@@ -1,0 +1,24 @@
+services:
+    marttiphpbb.calendarmono.listener:
+        class: marttiphpbb\calendarmono\event\listener
+        arguments:
+            - '@template'
+            - '@language'
+            - '@config'
+        tags:
+            - { name: event.listener }
+
+    marttiphpbb.calendarmono.core.event_container:
+        class: marttiphpbb\calendarmono\core\event_container
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@content.visibility'
+            - '@dbal.conn'
+            - '%tables.topics%'
+
+    marttiphpbb.calendarmono.dateformat:
+        class: marttiphpbb\calendarmono\util\dateformat
+        arguments:
+            - '@user'
+            - '@language'
