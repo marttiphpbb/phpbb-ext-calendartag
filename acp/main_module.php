@@ -26,14 +26,12 @@ class main_module
 		$language->add_lang('acp', cnst::FOLDER);
 		add_form_key(cnst::FOLDER);
 
-//		$settings = $phpbb_container->get('marttiphpbb.calendartag.repository.settings');
-
 		switch($mode)
 		{
-			case 'rendering':
+			case 'placement':
 
-				$this->tpl_name = 'rendering';
-				$this->page_title = $language->lang(cnst::L_ACP . '_RENDERING');
+				$this->tpl_name = 'placement';
+				$this->page_title = $language->lang(cnst::L_ACP . '_PLACEMENT');
 
 				if ($request->is_set_post('submit'))
 				{
@@ -42,19 +40,36 @@ class main_module
 						trigger_error('FORM_INVALID');
 					}
 
-					$config->set(cnst::TAG_IS_PREFIX, $request->variable('tag_is_prefix', 0));
+					$config->set(cnst::CONFIG_IS_PREFIX, $request->variable('is_prefix', 0));
 
-/*
-					$settings->set_lower_limit_days($request->variable('lower_limit_days', 0));
-					$settings->set_upper_limit_days($request->variable('upper_limit_days', 0));
-					$settings->set_min_duration_days($request->variable('min_duration_days', 0));
-					$settings->set_max_duration_days($request->variable('max_duration_days', 0));
-*/
 					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}
 
 				$template->assign_vars([
-					'TAG_IS_PREFIX'		=> $config[cnst::TAG_IS_PREFIX],
+					'IS_PREFIX'		=> $config[cnst::CONFIG_IS_PREFIX],
+				]);
+
+			break;
+
+			case 'template':
+
+				$this->tpl_name = 'template';
+				$this->page_title = $language->lang(cnst::L_ACP . '_TEMPLATE');
+
+				if ($request->is_set_post('submit'))
+				{
+					if (!check_form_key(cnst::FOLDER))
+					{
+						trigger_error('FORM_INVALID');
+					}
+
+					$config->set(cnst::CONFIG_IS_PREFIX, $request->variable('is_prefix', 0));
+
+					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
+				}
+
+				$template->assign_vars([
+					'TAG_IS_PREFIX'		=> $config[cnst::CONFIG_IS_PREFIX],
 				]);
 
 			break;

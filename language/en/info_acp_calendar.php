@@ -19,5 +19,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, [
 
 	'ACP_MARTTIPHPBB_CALENDARTAG'			=> 'Calendar Tag',
-	'ACP_MARTTIPHPBB_CALENDARTAG_RENDERING'	=> 'Rendering',
+	'ACP_MARTTIPHPBB_CALENDARTAG_PLACEMENT'	=> 'Placement',
+	'ACP_MARTTIPHPBB_CALENDARTAG_FORMAT'	=> 'Format',
+	'ACP_MARTTIPHPBB_CALENDARTAG_RENDERING'	=> 'Template',
 ]);

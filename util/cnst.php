@@ -17,8 +17,27 @@ class cnst
 	const L_MCP = 'MCP_' . self::L;
 	const TPL = '@' . self::ID . '/';
 	const EXT_PATH = 'ext/' . self::FOLDER . '/';
-	const COLUMN_PREFIX = 'marttiphpbb_calendar_';
-	const COLUMN_START = self::COLUMN_PREFIX . 'start_jd';
-	const COLUMN_END = self::COLUMN_PREFIX . 'end_jd';
-	const TAG_IS_PREFIX = self::ID . '_tag_is_prefix';
+	const SETTINGS = self::ID . '_settings';
+	const DEFAULT_SETTINGS = [
+		'is_prefix' => false,
+		'tag'	=> [
+			'diff_year'		=> 'MM1 d1, yy1 - MM2 d2, yy2',
+			'diff_month'	=> 'MM1 d1 - MM2 d2, yy',
+			'diff_day'		=> 'MM d1 - d2, yy',
+			'same_day'		=> 'MM d, yy',
+		],
+		'template'	=> [
+			'single'	=> [
+				'before'	=> '[%open%%tag%%close%>>]',
+				'now'		=> '[>%open%%tag%%close%<]',
+				'after'		=> '[<<%open%%tag%%close%]',
+			],
+			'multi'	=> [
+				'first'	=> '[%first%: %open%%tag%%close%]',
+				'next'	=> '[%next%: %open%%tag%%close%]',
+				'now'	=> '[>%open%%tag%%close%<]',
+				'last'	=> '[%last%: %open%%tag%%close%]',
+			],
+		],
+	];
 }

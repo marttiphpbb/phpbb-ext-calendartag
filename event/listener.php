@@ -49,7 +49,9 @@ class listener implements EventSubscriberInterface
 		}
 
 		$tags = $event['tags'];
+
 		$tags[] = '[ oufti: ' . $event['topic_id'] . ' ' . $event['origin_event_name'] . ' ]';
+
 		$event['tags'] = $tags;
 	}
 

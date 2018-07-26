@@ -1,0 +1,15 @@
+{%- include 'overall_header.html' -%}
+
+<h1>
+	{%- block heading -%}{%- endblock -%}
+</h1>
+
+<form id="acp_board" method="post" action="{{- U_ACTION -}}">
+
+	{%- block form_content -%}{%- endblock -%}
+
+	{%- include '@marttiphpbb_calendartag/include/submit_buttons.html' -%}
+	{{- S_FORM_TOKEN -}}
+</form>
+
+{%- include 'overall_footer.html' -%}
