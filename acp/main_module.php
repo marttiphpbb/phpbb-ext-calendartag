@@ -19,7 +19,7 @@ class main_module
 
 		$language = $phpbb_container->get('language');
 		$template = $phpbb_container->get('template');
-		$config = $phpbb_container->get('config');
+		$store = $phpbb_container->get('marttiphpbb.calendartag.store');
 		$request = $phpbb_container->get('request');
 		$phpbb_root_path = $phpbb_container->getParameter('core.root_path');
 
@@ -40,13 +40,44 @@ class main_module
 						trigger_error('FORM_INVALID');
 					}
 
-					$config->set(cnst::CONFIG_IS_PREFIX, $request->variable('is_prefix', 0));
+					$store->set_is_prefix($request->variable('is_prefix', 0) ? true : false);
 
 					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}
 
 				$template->assign_vars([
-					'IS_PREFIX'		=> $config[cnst::CONFIG_IS_PREFIX],
+					'IS_PREFIX'		=> $store->get_is_prefix(),
+				]);
+
+			break;
+
+			case 'format':
+
+				$this->tpl_name = 'format';
+				$this->page_title = $language->lang(cnst::L_ACP . '_FORMAT');
+
+				if ($request->is_set_post('submit'))
+				{
+					if (!check_form_key(cnst::FOLDER))
+					{
+						trigger_error('FORM_INVALID');
+					}
+
+					$store->transaction_start();
+					$store->set_format_diff_year($request->variable('diff_year', ''));
+					$store->set_format_diff_month($request->variable('diff_month', ''));
+					$store->set_format_diff_day($request->variable('diff_day', ''));
+					$store->set_format_same_day($request->variable('same_day', ''));
+					$store->transaction_end();
+
+					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
+				}
+
+				$template->assign_vars([
+					'DIFF_YEAR'		=> $store->get_format_diff_year(),
+					'DIFF_MONTH'	=> $store->get_format_diff_month(),
+					'DIFF_DAY'		=> $store->get_format_diff_day(),
+					'SAME_DAY'		=> $store->get_format_same_day(),
 				]);
 
 			break;
@@ -63,13 +94,27 @@ class main_module
 						trigger_error('FORM_INVALID');
 					}
 
-					$config->set(cnst::CONFIG_IS_PREFIX, $request->variable('is_prefix', 0));
+					$store->transaction_start();
+					$store->set_template_single_before($request->variable('single_before', ''));
+					$store->set_template_single_now($request->variable('single_now', ''));
+					$store->set_template_single_after($request->variable('single_after', ''));
+					$store->set_template_multi_first($request->variable('multi_first', ''));
+					$store->set_template_multi_now($request->variable('multi_now', ''));
+					$store->set_template_multi_next($request->variable('multi_next', ''));
+					$store->set_template_multi_last($request->variable('multi_last', ''));
+					$store->transaction_end();
 
 					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}
 
 				$template->assign_vars([
-					'TAG_IS_PREFIX'		=> $config[cnst::CONFIG_IS_PREFIX],
+					'SINGLE_BEFORE'		=> $store->get_template_single_before(),
+					'SINGLE_NOW'		=> $store->get_template_single_now(),
+					'SINGLE_AFTER'		=> $store->get_template_single_after(),
+					'MULTI_FIRST'		=> $store->get_template_multi_first(),
+					'MULTI_NOW'			=> $store->get_template_multi_now(),
+					'MULTI_NEXT'		=> $store->get_template_multi_next(),
+					'MULTI_LAST'		=> $store->get_template_multi_last(),
 				]);
 
 			break;

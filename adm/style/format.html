@@ -1,0 +1,83 @@
+{%- extends '@marttiphpbb_calendartag/base.html' -%}
+
+{%- block heading -%}
+	{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT') -}}
+{%- endblock -%}
+
+{%- block explain -%}
+	<p>
+		{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_EXPLAIN') -}}
+	</p>
+{%- endblock -%}
+
+{%- block form_content -%}
+	<fieldset>
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_DIFF_YEAR') -}}
+			{%- endblock -%}
+			{%- block explain -%}
+				<br>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_DIFF_YEAR_EXPLAIN') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				diff_year
+			{%- endblock -%}
+			{%- block value -%}
+				{{- DIFF_YEAR -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_DIFF_MONTH') -}}
+			{%- endblock -%}
+			{%- block explain -%}
+				<br>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_DIFF_MONTH_EXPLAIN') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				diff_month
+			{%- endblock -%}
+			{%- block value -%}
+				{{- DIFF_MONTH -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_DIFF_DAY') -}}
+			{%- endblock -%}
+			{%- block explain -%}
+				<br>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_DIFF_DAY_EXPLAIN') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				diff_day
+			{%- endblock -%}
+			{%- block value -%}
+				{{- DIFF_DAY -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_SAME_DAY') -}}
+			{%- endblock -%}
+			{%- block explain -%}
+				<br>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_SAME_DAY_EXPLAIN') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				same_day
+			{%- endblock -%}
+			{%- block value -%}
+				{{- SAME_DAY -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		<p>
+			{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_CODES') -}}
+		</p>
+	</fieldset>
+{%- endblock form_content -%}

@@ -22,3 +22,9 @@ services:
         arguments:
             - '@user'
             - '@language'
+
+    marttiphpbb.calendartag.store:
+        class: marttiphpbb\calendartag\service\store
+        arguments:
+            - '@config_text'
+            - '@cache.driver'

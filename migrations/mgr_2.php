@@ -21,7 +21,7 @@ class mgr_2 extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return [
-			['config_text.add', [cnst::SETTINGS, serialize(cnst::DEFAULT_SETTINGS)]],
+			['config_text.add', [cnst::ID, serialize(cnst::DEFAULT_SETTINGS)]],
 		];
 	}
 }

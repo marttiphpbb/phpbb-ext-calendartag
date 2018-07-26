@@ -72,7 +72,7 @@ class listener implements EventSubscriberInterface
 		$lang_set_ext = $event['lang_set_ext'];
 		$lang_set_ext[] = [
 			'ext_name' => 'marttiphpbb/calendartag',
-			'lang_set' => 'common',
+//			'lang_set' => 'common',
 		];
 		$event['lang_set_ext'] = $lang_set_ext;
 	}

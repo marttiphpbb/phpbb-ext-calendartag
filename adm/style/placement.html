@@ -6,7 +6,27 @@
 
 {%- block form_content -%}
 	<fieldset>
-		{%- set IS_PREFIX_EXPLAIN = lang('ACP_MARTTIPHPBB_CALENDARTAG_TAG_IS_PREFIX_EXPLAIN', '<a href="https://github.com/marttiphpbb/phpbb-ext-topicprefixtags">', '</a>', '<a href="https://github.com/marttiphpbb/phpbb-ext-topicsuffixtags">') -%}
-		{%- include '@marttiphpbb_calendartag/include/yes_no_radio.html' with {'label': 'ACP_MARTTIPHPBB_CALENDARTAG_IS_PREFIX', 'explain': IS_PREFIX_EXPLAIN, 'name': 'is_prefix', 'checked': IS_PREFIX} only -%}
+		{%- embed '@marttiphpbb_calendartag/include/yes_no_radio.html' with {'label': '', 'explain': IS_PREFIX_EXPLAIN, 'name': 'is_prefix', 'checked': IS_PREFIX} only -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_PLACEMENT_LABEL') -}}
+			{%- endblock -%}
+			{%- block explain -%}
+				<br>
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_PLACEMENT_LABEL_EXPLAIN',
+					'<a href="https://github.com/marttiphpbb/phpbb-ext-topicprefixtags">',
+					'</a>',
+					'<a href="https://github.com/marttiphpbb/phpbb-ext-topicsuffixtags">')
+				-}}
+			{%- endblock -%}
+			{%- block name -%}
+				is_prefix
+			{%- endblock -%}
+			{%- block label_one -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_PLACEMENT_BEFORE') -}}
+			{%- endblock -%}
+			{%- block label_zero -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_PLACEMENT_AFTER') -}}
+			{%- endblock -%}
+		{%- endembed -%}
 	</fieldset>
 {%- endblock form_content -%}

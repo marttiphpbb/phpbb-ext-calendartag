@@ -1,0 +1,118 @@
+{%- extends '@marttiphpbb_calendartag/base.html' -%}
+
+{%- block heading -%}
+	{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE') -}}
+{%- endblock -%}
+
+{%- block explain -%}
+	<p>
+		{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_EXPLAIN') -}}
+	</p>
+{%- endblock -%}
+
+{%- block form_content -%}
+	<fieldset>
+		<h2>
+			{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_SINGLE') -}}
+		</h2>
+		<p>
+			{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_SINGLE_EXPLAIN') -}}
+		</p>
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_SINGLE_BEFORE') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				single_before
+			{%- endblock -%}
+			{%- block value -%}
+				{{- SINGLE_BEFORE -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_SINGLE_NOW') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				single_now
+			{%- endblock -%}
+			{%- block value -%}
+				{{- SINGLE_NOW -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_SINGLE_AFTER') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				single_after
+			{%- endblock -%}
+			{%- block value -%}
+				{{- SINGLE_AFTER -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		<h2>
+			{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_MULTI') -}}
+		</h2>
+		<p>
+			{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_MULTI_EXPLAIN') -}}
+		</p>
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_MULTI_FIRST') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				multi_first
+			{%- endblock -%}
+			{%- block value -%}
+				{{- MULTI_FIRST -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_MULTI_NOW') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				multi_now
+			{%- endblock -%}
+			{%- block value -%}
+				{{- MULTI_NOW -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_MULTI_NEXT') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				multi_next
+			{%- endblock -%}
+			{%- block value -%}
+				{{- MULTI_NEXT -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		{%- embed '@marttiphpbb_calendartag/include/text.html' -%}
+			{%- block label -%}
+				{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_MULTI_LAST') -}}
+			{%- endblock -%}
+			{%- block name -%}
+				multi_last
+			{%- endblock -%}
+			{%- block value -%}
+				{{- MULTI_LAST -}}
+			{%- endblock -%}
+		{%- endembed -%}
+
+		<p>
+			{{- lang('ACP_MARTTIPHPBB_CALENDARTAG_TEMPLATE_CODES') -}}
+		</p>
+
+	</fieldset>
+{%- endblock form_content -%}
