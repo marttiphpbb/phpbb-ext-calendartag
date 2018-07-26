@@ -17,8 +17,8 @@ class main_info
 			'filename'	=> '\marttiphpbb\calendartag\acp\main_module',
 			'title'		=> cnst::L_ACP ,
 			'modes'		=> [
-				'tag_rendering'	=> [
-					'title'	=> cnst::L_ACP . '_TAG_RENDERING',
+				'rendering'	=> [
+					'title'	=> cnst::L_ACP . '_RENDERING',
 					'auth'	=> 'ext_marttiphpbb/calendartag && acl_a_board',
 					'cat'	=> [cnst::L_ACP],
 				],

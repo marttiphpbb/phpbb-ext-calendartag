@@ -30,10 +30,10 @@ class main_module
 
 		switch($mode)
 		{
-			case 'tag_rendering':
+			case 'rendering':
 
-				$this->tpl_name = 'tag_rendering';
-				$this->page_title = $language->lang(cnst::L_ACP . '_TAG_RENDERING');
+				$this->tpl_name = 'rendering';
+				$this->page_title = $language->lang(cnst::L_ACP . '_RENDERING');
 
 				if ($request->is_set_post('submit'))
 				{
