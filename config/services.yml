@@ -2,29 +2,20 @@ services:
     marttiphpbb.calendartag.listener:
         class: marttiphpbb\calendartag\event\listener
         arguments:
-            - '@template'
-            - '@language'
-            - '@config'
+            - '@marttiphpbb.calendartag.render'
+            - '@marttiphpbb.calendartag.store'
         tags:
             - { name: event.listener }
-
-    marttiphpbb.calendartag.core.event_container:
-        class: marttiphpbb\calendartag\core\event_container
-        arguments:
-            - '@auth'
-            - '@config'
-            - '@content.visibility'
-            - '@dbal.conn'
-            - '%tables.topics%'
-
-    marttiphpbb.calendartag.dateformat:
-        class: marttiphpbb\calendartag\util\dateformat
-        arguments:
-            - '@user'
-            - '@language'
 
     marttiphpbb.calendartag.store:
         class: marttiphpbb\calendartag\service\store
         arguments:
             - '@config_text'
             - '@cache.driver'
+
+    marttiphpbb.calendartag.render:
+        class: marttiphpbb\calendartag\service\render
+        arguments:
+            - '@dispatcher'
+            - '@marttiphpbb.calendartag.store'
+            - '@language'

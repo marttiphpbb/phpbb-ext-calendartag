@@ -7,29 +7,24 @@
 
 namespace marttiphpbb\calendartag\event;
 
-use phpbb\template\template;
-use phpbb\language\language;
-use phpbb\config\config;
 use phpbb\event\data as event;
-use marttiphpbb\calendartag\render\links;
+use marttiphpbb\calendartag\service\render;
+use marttiphpbb\calendartag\service\store;
 use marttiphpbb\calendartag\util\cnst;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	protected $template;
-	protected $language;
-	protected $config;
+	protected $render;
+	protected $store;
 
 	public function __construct(
-		template $template,
-		language $language,
-		config $config
+		render $render,
+		store $store
 	)
 	{
-		$this->template = $template;
-		$this->language = $language;
-		$this->config = $config;
+		$this->render = $render;
+		$this->store = $store;
 	}
 
 	static public function getSubscribedEvents()
@@ -43,37 +38,31 @@ class listener implements EventSubscriberInterface
 
 	public function set_prefix_tags(event $event)
 	{
-		if (!$this->config[cnst::TAG_IS_PREFIX])
+		if (!$this->store->get_is_prefix())
 		{
 			return;
 		}
 
 		$tags = $event['tags'];
+		$topic_data = $event['topic_data'];
 
-		$tags[] = '[ oufti: ' . $event['topic_id'] . ' ' . $event['origin_event_name'] . ' ]';
+		$tags[] = $this->render->get($topic_data);
 
 		$event['tags'] = $tags;
 	}
 
 	public function set_suffix_tags(event $event)
 	{
-		if ($this->config[cnst::TAG_IS_PREFIX])
+		if (!$this->store->get_is_prefix())
 		{
 			return;
 		}
 
 		$tags = $event['tags'];
+		$topic_data = $event['topic_data'];
+
+		$tags[] = $this->render->get($topic_data);
 
 		$event['tags'] = $tags;
-	}
-
-	public function core_user_setup(event $event)
-	{
-		$lang_set_ext = $event['lang_set_ext'];
-		$lang_set_ext[] = [
-			'ext_name' => 'marttiphpbb/calendartag',
-//			'lang_set' => 'common',
-		];
-		$event['lang_set_ext'] = $lang_set_ext;
 	}
 }
