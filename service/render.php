@@ -50,7 +50,7 @@ class render
 		 * @var int 	end_jd			end julian day of the most relevant calendar event
 		 */
 		$vars = ['topic_data', 'now_jd', 'index', 'total', 'start_jd', 'end_jd'];
-		extract($this->dispatcher->trigger_event('marttiphpbb.calendartag.set', compact($vars)));
+		extract($this->dispatcher->trigger_event('marttiphpbb.calendartag.data', compact($vars)));
 
 		if (!$total || !$start_jd || !$end_jd)
 		{
@@ -149,7 +149,7 @@ class render
 			}
 			else
 			{
-				$format = $this->store->get_format_diff_moth();
+				$format = $this->store->get_format_diff_month();
 			}
 		}
 		else
@@ -159,8 +159,8 @@ class render
 
 		$start_month_abbrev = $start['abbrevmonth'] === 'May' ? 'May_short' : $start['abbrevmonth'];
 		$end_month_abbrev = $end['abbrevmonth'] === 'May' ? 'May_short' : $end['abbrevmonth'];
-		$start_month_name = $language->lang(['datetime', $start['monthname']]);
-		$start_month_abbrev = $language->lang(['datetime', $start_month_abbrev]);
+		$start_month_name = $this->language->lang(['datetime', $start['monthname']]);
+		$start_month_abbrev = $this->language->lang(['datetime', $start_month_abbrev]);
 		$end_month_name = $this->language->lang(['datetime', $end['monthname']]);
 		$end_month_abbrev = $this->language->lang(['datetime', $end_month_abbrev]);
 		$start_day_name = $this->language->lang(['datetime', $start['dayname']]);

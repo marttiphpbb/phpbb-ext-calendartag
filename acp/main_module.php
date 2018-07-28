@@ -12,6 +12,7 @@ use marttiphpbb\calendartag\util\cnst;
 class main_module
 {
 	var $u_action;
+	protected $request;
 
 	function main($id, $mode)
 	{
@@ -21,6 +22,7 @@ class main_module
 		$template = $phpbb_container->get('template');
 		$store = $phpbb_container->get('marttiphpbb.calendartag.store');
 		$request = $phpbb_container->get('request');
+		$this->request = $request;
 		$phpbb_root_path = $phpbb_container->getParameter('core.root_path');
 
 		$language->add_lang('acp', cnst::FOLDER);
@@ -95,13 +97,13 @@ class main_module
 					}
 
 					$store->transaction_start();
-					$store->set_template_single_before($request->variable('single_before', ''));
-					$store->set_template_single_now($request->variable('single_now', ''));
-					$store->set_template_single_after($request->variable('single_after', ''));
-					$store->set_template_multi_first($request->variable('multi_first', ''));
-					$store->set_template_multi_now($request->variable('multi_now', ''));
-					$store->set_template_multi_next($request->variable('multi_next', ''));
-					$store->set_template_multi_last($request->variable('multi_last', ''));
+					$store->set_template_single_before($this->request_raw_str('single_before'));
+					$store->set_template_single_now($this->request_raw_str('single_now'));
+					$store->set_template_single_after($this->request_raw_str('single_after'));
+					$store->set_template_multi_first($this->request_raw_str('multi_first'));
+					$store->set_template_multi_now($this->request_raw_str('multi_now'));
+					$store->set_template_multi_next($this->request_raw_str('multi_next'));
+					$store->set_template_multi_last($this->request_raw_str('multi_last'));
 					$store->transaction_end();
 
 					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
@@ -121,5 +123,11 @@ class main_module
 		}
 
 		$template->assign_var('U_ACTION', $this->u_action);
+	}
+
+	private function request_raw_str(string $name):string
+	{
+		$value = utf8_normalize_nfc($this->request->variable($name, '', true));
+		return htmlspecialchars_decode($value);
 	}
 }

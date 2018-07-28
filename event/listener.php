@@ -30,9 +30,8 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return [
-			'core.user_setup'						=> 'core_user_setup',
-			'marttiphpbb.topicsuffixtags.set_tags'	=> 'set_suffix_tags',
-			'marttiphpbb.topicprefixtags.set_tags'	=> 'set_prefix_tags',
+			'marttiphpbb.topicsuffixtags'	=> 'set_suffix_tags',
+			'marttiphpbb.topicprefixtags'	=> 'set_prefix_tags',
 		];
 	}
 
@@ -53,7 +52,7 @@ class listener implements EventSubscriberInterface
 
 	public function set_suffix_tags(event $event)
 	{
-		if (!$this->store->get_is_prefix())
+		if ($this->store->get_is_prefix())
 		{
 			return;
 		}
