@@ -45,7 +45,12 @@ class listener implements EventSubscriberInterface
 		$tags = $event['tags'];
 		$topic_data = $event['topic_data'];
 
-		$tags[] = $this->render->get($topic_data);
+		$tag = $this->render->get($topic_data);
+
+		if ($tag)
+		{
+			$tags[] = $tag;
+		}
 
 		$event['tags'] = $tags;
 	}
@@ -60,7 +65,12 @@ class listener implements EventSubscriberInterface
 		$tags = $event['tags'];
 		$topic_data = $event['topic_data'];
 
-		$tags[] = $this->render->get($topic_data);
+		$tag = $this->render->get($topic_data);
+
+		if ($tag)
+		{
+			$tags[] = $tag;
+		}
 
 		$event['tags'] = $tags;
 	}
