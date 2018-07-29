@@ -132,6 +132,7 @@ class render
 		{
 			error_log('ERROR template, topic id: ' . $topic_data['topic_id'] .
 				', now: ' . $now_jd . ', start: ' . $start_jd . ', end: ' . $end_jd);
+			return '';
 		}
 
 		if ($start['year'] === $end['year'])
