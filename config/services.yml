@@ -19,3 +19,4 @@ services:
             - '@dispatcher'
             - '@marttiphpbb.calendartag.store'
             - '@language'
+            - '@user'

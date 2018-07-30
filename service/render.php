@@ -11,25 +11,32 @@ use phpbb\event\dispatcher;
 use marttiphpbb\calendartag\util\cnst;
 use marttiphpbb\calendartag\service\store;
 use phpbb\language\language;
+use phpbb\user;
 
 class render
 {
 	protected $dispatcher;
 	protected $store;
 	protected $language;
-	protected $cache;
+	protected $user;
 	protected $now_jd;
 
 	public function __construct(
 		dispatcher $dispatcher,
 		store $store,
-		language $language
+		language $language,
+		user $user
 	)
 	{
 		$this->dispatcher = $dispatcher;
 		$this->store = $store;
 		$this->language = $language;
-		$this->now_jd = unixtojd();
+		$this->user = $user;
+		$datetime = $this->user->create_datetime();
+		$format = $datetime->format('Y-m-d');
+		[$year, $month, $day] = explode('-', $format);
+		$this->now_jd = cal_to_jd(CAL_GREGORIAN, $month, $day, $year);
+//		$this->now_jd = unixtojd();
 	}
 
 	public function get(array $topic_data):string
