@@ -47,7 +47,7 @@ $lang = array_merge($lang, [
 			Any of the above can be followed by the numbers 1 or 2,
 			indicating the start date or the end date. When not followed
 			by a number, the code is from the start date.
-			Anything else is litaral text.',
+			Anything else is literal text.',
 
 	'ACP_MARTTIPHPBB_CALENDARTAG_FORMAT_EXPLAIN'
 		=> 'The calendar tag is formatted in 4 different ways depending
