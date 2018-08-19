@@ -112,6 +112,5 @@ $lang = array_merge($lang, [
 			<li><code>%index%</code> - the current number in a row of events (from the same topic)</li>
 			<li><code>%total%</code> - the total number of events of a topic</li>
 			</ul>
-			Anything else is litaral text.',
-
+			Anything else is literal text.',
 ]);
