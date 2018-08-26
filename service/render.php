@@ -70,6 +70,7 @@ class render
 		$year = $start['year'];
 		$month = $start['month'];
 		$day = $start['day'];
+		$topic_id = $topic_data['topic_id'];
 
 		/**
 		 * Event to set link for calendar view
@@ -77,6 +78,7 @@ class render
 		 * @event
 		 * @var string 	link		url to the calendar view to set
 		 * @var array 	topic_data
+		 * @var int 	topic_id
 		 * @var	int  	year
 		 * @var	int		month
 		 * @var int   	day
@@ -84,7 +86,7 @@ class render
 		 * @var int 	end_jd		end julian day
 		 * @var int 	now_jd 		julian day of today
 		 */
-		$vars = ['link', 'topic_data', 'year', 'month', 'day', 'start_jd', 'end_jd', 'now_jd'];
+		$vars = ['link', 'topic_data', 'topic_id', 'year', 'month', 'day', 'start_jd', 'end_jd', 'now_jd'];
 		extract($this->dispatcher->trigger_event('marttiphpbb.calendartag.link', compact($vars)));
 
 		if ($link)
@@ -137,7 +139,7 @@ class render
 
 		if (!$template)
 		{
-			error_log('ERROR template, topic id: ' . $topic_data['topic_id'] .
+			error_log('ERROR template, topic id: ' . $topic_id .
 				', now: ' . $now_jd . ', start: ' . $start_jd . ', end: ' . $end_jd);
 			return '';
 		}
