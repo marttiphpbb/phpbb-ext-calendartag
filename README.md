@@ -44,3 +44,15 @@ You can install this on the latest release of phpBB 3.2 by following the steps b
 ### MCP
 
 ![MCP](doc/mcp.png)
+
+### ACP: Placement
+
+![ACP Placement](doc/acp_placement.png)
+
+### ACP: Format
+
+![ACP Format](doc/acp_format.png)
+
+### ACP: Template
+
+![ACP Template](doc/acp_template.png)
