@@ -36,7 +36,6 @@ class render
 		$format = $datetime->format('Y-m-d');
 		[$year, $month, $day] = explode('-', $format);
 		$this->now_jd = cal_to_jd(CAL_GREGORIAN, $month, $day, $year);
-//		$this->now_jd = unixtojd();
 	}
 
 	public function get(array $topic_data):string
