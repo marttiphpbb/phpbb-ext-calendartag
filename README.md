@@ -8,6 +8,7 @@ This extension is part of the [Calendar Set](https://github.com/marttiphpbb/phpb
 
 * phpBB 3.2.1+
 * PHP 7.1+
+* PHP calendar extension (PHP compiled with --enable-calendar)
 * phpBB extension [Topic Prefix Tags](https://github.com/marttiphpbb/phpbb-ext-topicprefixtags) or [Topic Suffix Tags](https://github.com/marttiphpbb/phpbb-ext-topicsuffixtags)
 
 ## Quick Install
