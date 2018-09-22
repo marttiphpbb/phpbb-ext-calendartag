@@ -1,5 +1,7 @@
 # phpBB Extension - marttiphpbb Calendar Tag
 
+[Topic on phpBB.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2487156)
+
 ## Description
 
 This extension is part of the [Calendar Set](https://github.com/marttiphpbb/phpbb-ext-calendarmono/blob/master/doc/calendar-set.md) and generates (highly configurable) date tags next to the topic titles.
