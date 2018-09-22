@@ -178,10 +178,10 @@ class render
 		$end_day_abbrev = $this->language->lang(['datetime', $end['abbrevdayname']]);
 		$start_year_short = substr($start['year'], -2);
 		$end_year_short = substr($end['year'], -2);
-		$start_month_padded = str_pad($start['month'], 2, '0');
-		$end_month_padded = str_pad($end['month'], 2, '0');
-		$start_day_padded = str_pad($start['day'], 2, '0');
-		$end_day_padded = str_pad($end['day'], 2, '0');
+		$start_month_padded = str_pad($start['month'], 2, '0', STR_PAD_LEFT);
+		$end_month_padded = str_pad($end['month'], 2, '0', STR_PAD_LEFT);
+		$start_day_padded = str_pad($start['day'], 2, '0', STR_PAD_LEFT);
+		$end_day_padded = str_pad($end['day'], 2, '0', STR_PAD_LEFT);
 
 		$replace = [
 			'yy1'	=> $start['year'],
