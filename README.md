@@ -2,7 +2,7 @@
 
 ## Description
 
-This extension is part of the [Calendar Set](https://github.com/marttiphpbb/phpbb-ext-calendarmono) and generates (highly configurable) date tags next to the topic titles.
+This extension is part of the [Calendar Set](https://github.com/marttiphpbb/phpbb-ext-calendarmono/blob/master/doc/calendar-set.md) and generates (highly configurable) date tags next to the topic titles.
 
 ## Requirements
 
