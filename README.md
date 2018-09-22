@@ -1,11 +1,14 @@
 # phpBB Extension - marttiphpbb Calendar Tag
 
-## This extension is only in the stage of initial development
+## Description
+
+This extension is part of the [Calendar Set](https://github.com/marttiphpbb/phpbb-ext-calendarmono) and generates (highly configurable) date tags next to the topic titles.
 
 ## Requirements
 
 * phpBB 3.2.1+
 * PHP 7.1+
+* phpBB extension [Topic Prefix Tags](https://github.com/marttiphpbb/phpbb-ext-topicprefixtags) or [Topic Suffix Tags](https://github.com/marttiphpbb/phpbb-ext-topicsuffixtags)
 
 ## Quick Install
 
@@ -27,3 +30,17 @@ You can install this on the latest release of phpBB 3.2 by following the steps b
 ## License
 
 [GPL-2.0](license.txt)
+
+## Screenshots
+
+### Viewtopic
+
+![Viewtopic](doc/viewtopic.png)
+
+### Viewforum
+
+![Viewforum](doc/viewforum.png)
+
+### MCP
+
+![MCP](doc/mcp.png)
