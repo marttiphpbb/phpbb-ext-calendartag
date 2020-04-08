@@ -10,7 +10,6 @@ namespace marttiphpbb\calendartag\event;
 use phpbb\event\data as event;
 use marttiphpbb\calendartag\service\render;
 use marttiphpbb\calendartag\service\store;
-use marttiphpbb\calendartag\util\cnst;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
