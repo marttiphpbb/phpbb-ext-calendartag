@@ -14,7 +14,7 @@ class main_module
 	var $u_action;
 	protected $request;
 
-	function main($id, $mode)
+	function main($id, $mode):void
 	{
 		global $phpbb_container;
 
@@ -23,7 +23,6 @@ class main_module
 		$store = $phpbb_container->get('marttiphpbb.calendartag.store');
 		$request = $phpbb_container->get('request');
 		$this->request = $request;
-		$phpbb_root_path = $phpbb_container->getParameter('core.root_path');
 
 		$language->add_lang('acp', cnst::FOLDER);
 		add_form_key(cnst::FOLDER);

@@ -8,7 +8,6 @@
 namespace marttiphpbb\calendartag\service;
 
 use phpbb\event\dispatcher;
-use marttiphpbb\calendartag\util\cnst;
 use marttiphpbb\calendartag\service\store;
 use phpbb\language\language;
 use phpbb\user;

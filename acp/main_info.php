@@ -11,7 +11,7 @@ use marttiphpbb\calendartag\util\cnst;
 
 class main_info
 {
-	function module()
+	function module():array
 	{
 		return [
 			'filename'	=> '\marttiphpbb\calendartag\acp\main_module',

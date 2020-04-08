@@ -79,42 +79,6 @@ class store
 		$this->write($this->local_cache);
 	}
 
-	private function get_array(string $name):array
-	{
-		return $this->get_all()[$name];
-	}
-
-	private function set_array(string $name, array $value):void
-	{
-		$ary = $this->get_all();
-		$ary[$name] = $value;
-		$this->set($ary);
-	}
-
-	private function set_string(string $name, string $value):void
-	{
-		$ary = $this->get_all();
-		$ary[$name] = $value;
-		$this->set($ary);
-	}
-
-	private function get_string(string $name):string
-	{
-		return $this->get_all()[$name];
-	}
-
-	private function set_int(string $name, int $value):void
-	{
-		$ary = $this->get_all();
-		$ary[$name] = $value;
-		$this->set($ary);
-	}
-
-	private function get_int(string $name):int
-	{
-		return $this->get_all()[$name];
-	}
-
 	private function set_boolean(string $name, bool $value):void
 	{
 		$ary = $this->get_all();
