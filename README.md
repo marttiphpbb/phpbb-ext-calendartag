@@ -8,14 +8,14 @@ This extension is part of the [Calendar Set](https://github.com/marttiphpbb/phpb
 
 ## Requirements
 
-* phpBB 3.2.1+
+* phpBB 3.3+
 * PHP 7.1+
 * PHP calendar extension (PHP compiled with --enable-calendar)
 * phpBB extension [Topic Prefix Tags](https://github.com/marttiphpbb/phpbb-ext-topicprefixtags) or [Topic Suffix Tags](https://github.com/marttiphpbb/phpbb-ext-topicsuffixtags)
 
 ## Quick Install
 
-You can install this on the latest release of phpBB 3.2 by following the steps below:
+You can install this on the latest release of phpBB by following the steps below:
 
 * Create `marttiphpbb/calendartag` in the `ext` directory.
 * Download and unpack the repository into `ext/marttiphpbb/calendartag`
