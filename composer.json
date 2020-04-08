@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "Calendar Tag Extension for phpBB 3.3",
 	"homepage": "https://github.com/marttiphpbb/phpbb-ext-calendartag",
-	"version": "0.2.0",
-	"time": "2018-09-22",
+	"version": "0.3.0",
+	"time": "2020-04-08",
 	"keywords": ["phpbb", "extension", "calendar", "mono"],
 	"license": "GPL-2.0-only",
 	"authors": [{

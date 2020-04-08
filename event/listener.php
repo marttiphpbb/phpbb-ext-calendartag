@@ -26,7 +26,7 @@ class listener implements EventSubscriberInterface
 		$this->store = $store;
 	}
 
-	static public function getSubscribedEvents()
+	static public function getSubscribedEvents():array
 	{
 		return [
 			'marttiphpbb.topicsuffixtags'	=> 'set_suffix_tags',
@@ -34,7 +34,7 @@ class listener implements EventSubscriberInterface
 		];
 	}
 
-	public function set_prefix_tags(event $event)
+	public function set_prefix_tags(event $event):void
 	{
 		if (!$this->store->get_is_prefix())
 		{
@@ -54,7 +54,7 @@ class listener implements EventSubscriberInterface
 		$event['tags'] = $tags;
 	}
 
-	public function set_suffix_tags(event $event)
+	public function set_suffix_tags(event $event):void
 	{
 		if ($this->store->get_is_prefix())
 		{
